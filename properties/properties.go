@@ -100,11 +100,10 @@ func (p propertiesFormater) translate(rv reflect.Value) (properties []string, ha
 					if it {
 						properties = append(properties, fmt.Sprintf("[%d].%s", index, nextItem))
 					} else {
-						properties = append(properties, fmt.Sprintf("[%d]%s", index, nextItem))
+						properties = append(properties, fmt.Sprintf("[%d]%s", i, nextItem))
 					}
 				} else {
-					properties = append(properties, fmt.Sprintf("[%d].%s", i, nextItem))
-
+						properties = append(properties, fmt.Sprintf("[%d].%s", i, nextItem))
 				}
 			}
 		}
