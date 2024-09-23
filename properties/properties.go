@@ -187,7 +187,10 @@ func (p propertiesFormater) translate(rv reflect.Value) (properties []string, ha
 			for _, item := range items {
 				itemName := rv.Type().Field(i).Name
 				if p.UseJsonFlag {
-					itemJsonTag := tag.Get("json")
+					itemJsonTag := tag.Get("property")
+					if itemJsonTag == "" {
+						itemJsonTag = tag.Get("json")
+					}
 					if itemJsonTag != "" {
 						itemJsonTagName, itemJsonTagOpt, _ := strings.Cut(itemJsonTag, ",")
 						for _, c := range itemJsonTagName {
