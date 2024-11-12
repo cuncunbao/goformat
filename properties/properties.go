@@ -210,6 +210,9 @@ func (p propertiesFormater) translate(rv reflect.Value) (properties []string, ha
 								continue
 							}
 						}
+						if itemJsonTagName == "-" {
+							continue //说明是需要被忽略的值
+						}
 						itemName = itemJsonTagName
 					}
 				}
