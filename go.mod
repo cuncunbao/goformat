@@ -1,3 +1,3 @@
-module github.com/19931024/goformat
+module github.com/AiCloudNative/goformat
 
 go 1.21
